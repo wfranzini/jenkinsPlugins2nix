@@ -35,6 +35,8 @@ data Config = Config
     resolution_strategy :: !ResolutionStrategy
     -- | User-required plugins.
   , requested_plugins :: ![RequestedPlugin]
+    -- | Plugin resolution
+  , plugin_resolution :: !PluginResolution
   } deriving (Show, Eq, Ord)
 
 -- | Plugin that user requested on the command line.

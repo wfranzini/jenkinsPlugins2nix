@@ -51,6 +51,9 @@ parseConfig = Config
                <> Opt.short 'p'
                <> Opt.help "Plugins we should generate nix for. Latest version is used if not specified." )
                )
+  <*> Opt.flag Optional Mandatory
+      ( Opt.long "skip-optional"
+        <> Opt.help "skip optional dependencies" )
   where
     resolutions :: Bimap.Bimap ResolutionStrategy String
     resolutions = Bimap.fromList [(AsGiven, "as-given"), (Latest, "latest")]
